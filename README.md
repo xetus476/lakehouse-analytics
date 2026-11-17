@@ -11,13 +11,13 @@ This project focuses on building a data platform for Dota 2 match analytics. It 
 -MART - A view in which all data is processed with results for subsequent visualization.
 
 # 3. Tech Stack
-Languages: Python, SQL
-Processing: Apache Spark, PySpark
-Storage: Apache Iceberg, MinIO
-Databases: PostgreSQL, MongoDB
-Query Engine: Trino
-Orchestration: Apache Airflow
-Analytics / ML: Pandas, NumPy, Scikit-learn, PCA/SVD
+### Languages: Python, SQL
+### Processing: Apache Spark, PySpark
+### Storage: Apache Iceberg, MinIO
+### Databases: PostgreSQL, MongoDB
+### Query Engine: Trino
+### Orchestration: Apache Airflow
+### Analytics / ML: Pandas, NumPy, Scikit-learn, PCA/SVD
 
 # 4. Project Cases
 ## Business goal:
