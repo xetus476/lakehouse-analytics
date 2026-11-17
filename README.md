@@ -40,3 +40,49 @@ Counter-picks
 
 Analyze pairs of opposing heroes and their win rates.
 Evaluate hero pairings while accounting for the side (Radiant/Dire), game patch, role, and sample size. Do not draw conclusions based on win rates without considering confidence intervals.
+
+# File structure
+
+dota2-data-engineering/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+├── .env.example
+│
+├── docs/
+│   ├── architecture.png
+│   ├── data_model.png
+│   └── project_overview.md
+│
+├── architecture/
+│   ├── lakehouse_schema.md
+│   └── data_flow.md
+│
+├── cases/
+│   │
+│   ├── first tower/
+│   │   ├── README.md
+│   │   ├── notebooks/
+│   │   ├── sql/
+│   │   └── src/
+│   │
+│   ├── match_duration_prediction/
+│   │   ├── README.md
+│   │   ├── notebooks/
+│   │   ├── sql/
+│   │   └── src/
+│   │
+│   └── hero_counter_picks/
+│       ├── README.md
+│       ├── notebooks/
+│       ├── sql/
+│       └── src/
+│
+├── dags/
+│   └── README.md
+│
+├── tests/
+│   └── README.md
+│
+└── requirements.txt
