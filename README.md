@@ -43,7 +43,7 @@ Evaluate hero pairings while accounting for the side (Radiant/Dire), game patch,
 
 # File structure
 
-dota2-data-engineering/
+`dota2-data-engineering/
 │
 ├── README.md
 ├── LICENSE
@@ -80,7 +80,7 @@ dota2-data-engineering/
 │       └── src/
 │
 ├── dags/
-│   └── README.md
+│   └── README.md`
 │
 ├── tests/
 │   └── README.md
