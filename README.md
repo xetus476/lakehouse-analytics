@@ -20,5 +20,23 @@ Orchestration: Apache Airflow
 Analytics / ML: Pandas, NumPy, Scikit-learn, PCA/SVD
 
 # 4. Project Cases
+## Business goal:
+To optimize the workflow of Dota 2 specialists and highlight key aspects of the game.
 
 ## Case 1
+First Tower
+
+Examine the correlation between the timing of the first tower's destruction and the attacking side's probability of winning.
+Identify the first tower to be destroyed, the side it belonged to, and the time at which the event occurred. Compare this early advantage with the final match outcome and subsequent map control.
+
+## Case 2
+Duration Prediction
+
+Build a regression model to predict match duration based on early-game events.
+Make predictions using only information available within the first 15 minutes. Compare a baseline model against your regression model across different time intervals.
+
+## Case 3
+Counter-picks
+
+Analyze pairs of opposing heroes and their win rates.
+Evaluate hero pairings while accounting for the side (Radiant/Dire), game patch, role, and sample size. Do not draw conclusions based on win rates without considering confidence intervals.
