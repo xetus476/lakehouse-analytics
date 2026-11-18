@@ -35,3 +35,19 @@ dota_duration_15min_match_duration_predictions - which contains all the essentia
 ## convergence of two models
 <img width="1058" height="501" alt="изображение" src="https://github.com/user-attachments/assets/d257eaa1-d411-4ea4-8428-c145aa02fa45" />
 
+# Hypotheses
+
+Hypothesis Testing — Case 19
+## 1. Economic imbalance (gold/experience) is a top-3 factor influencing match duration.
+## 2 "Turbo" mode as a determining factor.
+Feature importance was calculated using a decision tree. Outliers were removed based on the 3-sigma rule.
+Sample size: 13,048 matches.
+## 3.The tree model outperforms the baseline, and the gap widens over time.
+We calculated the MAE and RMSE between the baseline (median) and the tree model across 5-, 10-, and 15-minute intervals.
+
+# Conclusion
+Predicting match duration
+A Random Forest model was trained on 13,048 matches.
+The MAE was 4.28 minutes, and the RMSE was 6.23 minutes.
+Economic indicators also proved to be significant features.
+For matches lasting longer than 45 minutes, the error is higher — approximately 16.33 minutes.
