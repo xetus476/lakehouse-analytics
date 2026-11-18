@@ -91,6 +91,116 @@
 
 Не следует делать выводы исключительно на основе винрейта без учёта доверительных интервалов и объёма выборки.
 
+## Начало работы (Getting Started)
+
+### 1. Предварительные требования (Prerequisites)
+
+Перед запуском проекта убедитесь, что установлены следующие инструменты:
+
+| Инструмент | Назначение |
+|---|---|
+| Python 3.10+ | Основной язык программирования |
+| Git | Система контроля версий |
+| Docker & Docker Compose | Запуск инфраструктурных сервисов (при наличии соответствующей конфигурации) |
+| Apache Spark | Распределённая обработка данных |
+| PostgreSQL | Реляционный источник данных |
+| MongoDB | NoSQL-источник данных |
+| MinIO | Объектное хранилище с поддержкой S3 |
+| Trino | SQL-движок для выполнения запросов |
+| Apache Iceberg | Открытый формат табличного хранения данных |
+| Apache Airflow | Оркестрация рабочих процессов |
+
+> **Примечание:** Некоторые сервисы могут быть необязательными в зависимости от используемого конвейера обработки данных или аналитического кейса. Конкретные требования указаны в README соответствующего кейса.
+
+### 2. Клонирование репозитория
+
+```bash
+git clone https://github.com/YOUR_USERNAME/dota2-data-engineering.git
+
+cd dota2-data-engineering
+```
+
+### 3. Создание виртуального окружения
+
+Создайте и активируйте виртуальное окружение Python.
+
+**Windows (PowerShell):**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**Linux / macOS:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 4. Установка зависимостей
+
+Установите необходимые Python-библиотеки:
+
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### 5. Настройка переменных окружения
+
+Создайте локальный файл с переменными окружения.
+
+**Windows:**
+
+```powershell
+Copy-Item .env.example .env
+```
+
+**Linux / macOS:**
+
+```bash
+cp .env.example .env
+```
+
+Откройте файл `.env` и укажите параметры подключения к локальным базам данных, настройки хранилища и конфигурацию необходимых сервисов.
+
+**Важно:** Никогда не добавляйте файл `.env` в Git и не публикуйте пароли или ключи доступа.
+
+### 6. Запуск инфраструктурных сервисов
+
+Если в проекте предусмотрена конфигурация Docker Compose, запустите необходимые сервисы:
+
+```bash
+docker compose up -d
+```
+
+Проверьте состояние запущенных контейнеров:
+
+```bash
+docker compose ps
+```
+
+### 7. Запуск проекта
+
+Проект разделён на отдельные аналитические кейсы:
+
+| Кейс | Описание |
+|---|---|
+| Roshan Control | Анализ игровых событий, связанных с Рошаном |
+| Match Duration Prediction | Подготовка данных для предсказания продолжительности матча на основе признаков ранней стадии игры |
+| Hero Counter-Picks | Анализ противостояний героев с использованием PCA/SVD, косинусного сходства и статистики винрейта |
+
+Откройте соответствующий ноутбук в директории `cases/` и последовательно выполните его ячейки в необходимом порядке.
+
+Например, для запуска JupyterLab выполните:
+
+```bash
+jupyter lab
+```
+
+После запуска перейдите к ноутбуку выбранного аналитического кейса.
+
 # 5. Структура проекта
 
 ```text
@@ -161,6 +271,141 @@ Counter-picks
 
 Analyze pairs of opposing heroes and their win rates.
 Evaluate hero pairings while accounting for the side (Radiant/Dire), game patch, role, and sample size. Do not draw conclusions based on win rates without considering confidence intervals.
+
+## Getting Started
+
+### 1. Prerequisites
+
+Before running the project, make sure you have installed:
+
+| Tool | Purpose |
+|---|---|
+| Python 3.10+ | Main programming language |
+| Git | Version control |
+| Docker & Docker Compose | Running infrastructure services (if configured) |
+| Apache Spark | Distributed data processing |
+| PostgreSQL | Relational data source |
+| MongoDB | NoSQL data source |
+| MinIO | S3-compatible object storage |
+| Trino | SQL query engine |
+| Apache Iceberg | Open table format |
+| Apache Airflow | Workflow orchestration |
+
+> **Note:** Some services may be optional depending on the pipeline or use case you want to run. Check the corresponding case README for specific requirements.
+
+### 2. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/dota2-data-engineering.git
+
+cd dota2-data-engineering
+```
+
+### 3. Create a virtual environment
+
+Create and activate a Python virtual environment:
+
+**Windows (PowerShell):**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**Linux / macOS:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 4. Install dependencies
+
+Install the required Python packages:
+
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### 5. Configure environment variables
+
+Create your local environment file:
+
+**Windows:**
+
+```powershell
+Copy-Item .env.example .env
+```
+
+**Linux / macOS:**
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and provide your local database credentials, storage settings, and service configuration.
+
+**Important:** Never commit your `.env` file or expose passwords and access keys.
+
+### 6. Start infrastructure services
+
+If Docker Compose configuration is available, start the required services:
+
+```bash
+docker compose up -d
+```
+
+Check running containers:
+
+```bash
+docker compose ps
+```
+
+### 7. Run the project
+
+The project is organized into separate analytical use cases:
+
+| Use case | Description |
+|---|---|
+| Roshan Control | Analysis of Roshan-related match events |
+| Match Duration Prediction | Dataset preparation for predicting match duration using early-game features |
+| Hero Counter-Picks | Hero matchup analysis using PCA/SVD, cosine similarity, and win rate statistics |
+
+Open the corresponding notebook in `cases/` and execute its cells in the required order.
+
+For example:
+
+```bash
+jupyter lab
+```
+
+Then navigate to the selected use case notebook.
+
+## Project Structure
+
+```text
+dota2-data-engineering/
+├── architecture/       # Lakehouse architecture and data flow
+├── cases/              # Analytical use cases
+├── dags/               # Airflow DAGs
+├── docs/               # Documentation and diagrams
+├── tests/              # Unit, integration and data quality tests
+├── .env.example        # Environment variables template
+├── .gitignore
+├── LICENSE
+├── requirements.txt
+└── README.md
+```
+
+## Troubleshooting
+
+- **Connection refused:** Make sure the required infrastructure services are running and check connection settings in `.env`.
+- **ModuleNotFoundError:** Activate the virtual environment and install dependencies from `requirements.txt`.
+- **Spark initialization errors:** Check your Java and Spark configuration.
+- **Docker errors:** Verify that Docker Desktop or Docker Engine is running.
+
+For detailed instructions, check the README file inside the corresponding use case directory.
 
 # File structure
 
