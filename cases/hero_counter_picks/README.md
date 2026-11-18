@@ -37,3 +37,19 @@ mart_hero_counterpick_stats - which contains all the information about the chara
 ## Distribution of characters by number of matches and the deviation in their win rates
 <img width="1085" height="571" alt="изображение" src="https://github.com/user-attachments/assets/1ec2e37d-c5ca-4981-9755-7f2f3d4a8194" />
 
+# Hypotheses
+
+## 1.The reliability of the identified counter-picks depends on the number of matches.
+Confirmed
+## Counter-picking affects win rate. As can be seen on the heatmap, there are spikes in win rate activity.
+Confirmed.
+## Pudge has no hard counters. (The win-rate differential against any given hero is 5% or less.)
+Confirmed.
+
+# Conclusion
+Hero Counter-Pick Analysis
+Processed over 309,000 matches and 127 heroes.
+Calculated 8,001 hero-pair similarities using PCA and Cosine Similarity.
+The final dataset contains 5,286 directed matchups.
+For each pair, we calculated the Matchup Win Rate, Baseline Win Rate, and 95% confidence intervals.
+Quality checks passed: no invalid win rates or duplicates were found.
