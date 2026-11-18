@@ -180,25 +180,6 @@ docker compose up -d
 ```bash
 docker compose ps
 ```
-
-### 7. Запуск проекта
-
-Проект разделён на отдельные аналитические кейсы:
-
-| Кейс | Описание |
-|---|---|
-| Roshan Control | Анализ игровых событий, связанных с Рошаном |
-| Match Duration Prediction | Подготовка данных для предсказания продолжительности матча на основе признаков ранней стадии игры |
-| Hero Counter-Picks | Анализ противостояний героев с использованием PCA/SVD, косинусного сходства и статистики винрейта |
-
-Откройте соответствующий ноутбук в директории `cases/` и последовательно выполните его ячейки в необходимом порядке.
-
-Например, для запуска JupyterLab выполните:
-
-```bash
-jupyter lab
-```
-
 После запуска перейдите к ноутбуку выбранного аналитического кейса.
 
 # 5. Структура проекта
@@ -361,51 +342,7 @@ Check running containers:
 ```bash
 docker compose ps
 ```
-
-### 7. Run the project
-
-The project is organized into separate analytical use cases:
-
-| Use case | Description |
-|---|---|
-| Roshan Control | Analysis of Roshan-related match events |
-| Match Duration Prediction | Dataset preparation for predicting match duration using early-game features |
-| Hero Counter-Picks | Hero matchup analysis using PCA/SVD, cosine similarity, and win rate statistics |
-
-Open the corresponding notebook in `cases/` and execute its cells in the required order.
-
-For example:
-
-```bash
-jupyter lab
-```
-
 Then navigate to the selected use case notebook.
-
-## Project Structure
-
-```text
-dota2-data-engineering/
-├── architecture/       # Lakehouse architecture and data flow
-├── cases/              # Analytical use cases
-├── dags/               # Airflow DAGs
-├── docs/               # Documentation and diagrams
-├── tests/              # Unit, integration and data quality tests
-├── .env.example        # Environment variables template
-├── .gitignore
-├── LICENSE
-├── requirements.txt
-└── README.md
-```
-
-## Troubleshooting
-
-- **Connection refused:** Make sure the required infrastructure services are running and check connection settings in `.env`.
-- **ModuleNotFoundError:** Activate the virtual environment and install dependencies from `requirements.txt`.
-- **Spark initialization errors:** Check your Java and Spark configuration.
-- **Docker errors:** Verify that Docker Desktop or Docker Engine is running.
-
-For detailed instructions, check the README file inside the corresponding use case directory.
 
 # File structure
 
