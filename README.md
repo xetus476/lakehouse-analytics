@@ -108,21 +108,15 @@ dota2-data-engineering/
 │   │
 │   ├── first tower/
 │   │   ├── README.md
-│   │   ├── notebooks/
-│   │   ├── sql/
-│   │   └── src/
+│   │   └── notebooks/
 │   │
 │   ├── match_duration_prediction/
 │   │   ├── README.md
-│   │   ├── notebooks/
-│   │   ├── sql/
-│   │   └── src/
+│   │   └── notebooks/
 │   │
 │   └── hero_counter_picks/
 │       ├── README.md
-│       ├── notebooks/
-│       ├── sql/
-│       └── src/
+│       └── notebooks/
 ```
 
 # lakehouse-analytics
@@ -170,7 +164,7 @@ Evaluate hero pairings while accounting for the side (Radiant/Dire), game patch,
 
 # File structure
 
-dota2-data-engineering/\
+```dota2-data-engineering/\
 │\
 ├── README.md\
 ├── .env.example\
@@ -184,18 +178,13 @@ dota2-data-engineering/\
 │   │\
 │   ├── first tower/\
 │   │   ├── README.md\
-│   │   ├── notebooks/\
-│   │   ├── sql/\
-│   │   └── src/\
+│   │   └──  notebooks/\
 │   │\
 │   ├── match_duration_prediction/\
 │   │   ├── README.md\
-│   │   ├── notebooks/\
-│   │   ├── sql/\
-│   │   └── src/\
+│   │   └── notebooks/\
 │   │\
 │   └── hero_counter_picks/\
 │       ├── README.md\
-│       ├── notebooks/\
-│       ├── sql/\
-│       └── src/\
+│       └── notebooks/\
+```
